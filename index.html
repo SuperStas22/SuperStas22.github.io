@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Станислав Малашкеевич</title>
+<meta name="description" content="Станислав Малашкеевич — химик. Нейросети для предсказания молекулярных свойств и УФ-спектров, агентные системы для лаборатории, бенчмаркинг LLM в химии.">
+<link rel="canonical" href="https://superstas22.github.io/">
+
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Станислав Малашкеевич">
+<meta property="og:title" content="Станислав Малашкеевич — химия и машинное обучение">
+<meta property="og:description" content="Нейросети для молекулярных свойств и УФ-спектров, агентные системы для лаборатории, бенчмаркинг LLM в химии.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="profile:first_name" content="Станислав">
+<meta property="profile:last_name" content="Малашкеевич">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Станислав Малашкеевич",
+  "alternateName": "Stanislav Malashkeevich",
+  "email": "mailto:stasm298@gmail.com",
+  "jobTitle": "Research intern, chemist",
+  "description": "Химик: машинное обучение для молекулярных свойств и УФ-спектров, агентные системы для лаборатории, бенчмаркинг LLM.",
+  "knowsAbout": ["Computational chemistry", "Machine learning", "UV spectra prediction", "Organic synthesis", "Large language models"],
+  "alumniOf": {"@type": "CollegeOrUniversity", "name": "МГУ имени М. В. Ломоносова"},
+  "sameAs": ["https://github.com/SuperStas22"]
+}
+</script>
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap">
+
+<style>
+  :root {
+    --bg:      #12100f;
+    --bg-2:    #201d1b;
+    --ink:     #f4f4f0;
+    --muted:   #dcdcd4;
+    --faint:   #a3a39b;
+    --accent:  #ccff00;
+    --accent-2:#ff458e;
+    --line:    #262220;
+    --line-2:  #38332f;
+    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+    --font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --lh: 1.5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; font-size: 15px; scroll-behavior: smooth; background: var(--bg); }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: var(--font-mono); font-size: 1.06rem; font-weight: 300; line-height: var(--lh);
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; text-wrap: pretty;
+  }
+  ::selection { background: var(--accent); color: var(--bg); }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+  .label {
+    font-family: var(--font-mono); font-size: 10.5px; font-weight: 500;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--accent);
+  }
+
+  /* ---------- shell ---------- */
+  .page {
+    max-width: 1080px; margin: 0 auto;
+    padding: clamp(44px, 7vh, 76px) clamp(24px, 5vw, 60px) 72px;
+    display: grid; grid-template-columns: 330px 1fr; gap: clamp(44px, 6vw, 88px);
+    align-items: start;
+  }
+
+  /* ---------- left rail ---------- */
+  .rail { position: sticky; top: clamp(56px, 10vh, 104px); }
+  .monogram {
+    display: inline-flex; align-items: center; gap: 9px; margin-bottom: 28px;
+    font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--faint);
+  }
+  .monogram .dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 14px rgba(204, 255, 0, .55);
+  }
+  h1 {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: clamp(2.3rem, 4.4vw, 3.1rem); line-height: 1.05;
+    letter-spacing: -0.025em; margin-bottom: 16px;
+  }
+  h1 .it { display: block; font-weight: 400; color: var(--accent); }
+  .tagline {
+    font-size: 1.05rem; font-weight: 300; line-height: 1.45;
+    color: var(--muted); max-width: 32ch; margin-bottom: 26px;
+  }
+
+  .lang { display: inline-flex; align-items: center; gap: 2px; margin-bottom: 34px; }
+  .lang button {
+    background: none; border: 0; cursor: pointer; padding: 5px 9px; border-radius: 6px;
+    font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .08em; color: var(--faint);
+    transition: color .18s, background .18s;
+  }
+  .lang button.active { color: var(--bg); background: var(--accent); }
+  .lang button:not(.active):hover { color: var(--ink); }
+  .lang .sep { color: var(--line-2); }
+
+  /* spec sheet */
+  .spec { display: flex; flex-direction: column; gap: 14px; padding-top: 24px; margin-bottom: 28px; border-top: 1px solid var(--line); }
+  .row { display: flex; align-items: baseline; gap: 10px; }
+  .row .k {
+    font-size: 9.5px; font-weight: 500; letter-spacing: .15em;
+    text-transform: uppercase; color: var(--faint); white-space: nowrap;
+  }
+  .row .ldr { flex: 1 1 14px; min-width: 14px; border-bottom: 1px dotted var(--line-2); transform: translateY(-4px); }
+  .row .v { font-size: .95rem; color: var(--ink); text-align: right; line-height: 1.32; }
+  .row .v .sub { display: block; color: var(--faint); font-size: .88rem; margin-top: 2px; }
+
+  .quip { margin-bottom: 28px; font-style: italic; color: var(--faint); font-size: .96rem; line-height: 1.42; }
+
+  .contact { padding-top: 18px; border-top: 1px solid var(--line); }
+  .contact .label { display: block; margin-bottom: 15px; }
+  .contact-list { display: flex; flex-direction: column; gap: 11px; }
+  .contact-list a {
+    width: fit-content; font-size: .98rem; color: var(--ink);
+    display: inline-flex; align-items: baseline; gap: 9px;
+    border-bottom: 1px solid var(--line-2); padding-bottom: 2px;
+    transition: color .18s, border-color .18s;
+  }
+  .contact-list a .ar { font-size: .8em; color: var(--faint); transition: transform .18s, color .18s; }
+  .contact-list a:hover { color: var(--accent); border-color: var(--accent); }
+  .contact-list a:hover .ar { color: var(--accent); transform: translate(2px, -2px); }
+
+  /* ---------- right column ---------- */
+  .content { max-width: 640px; padding-top: 6px; }
+  .content .label { display: block; margin-bottom: 18px; }
+
+  .projects { list-style: none; border-top: 1px solid var(--line); }
+  .projects li {
+    position: relative; padding: 15px 4px; border-bottom: 1px solid var(--line);
+    transition: background .3s;
+  }
+  .projects li::before {
+    content: ''; position: absolute; left: -4px; top: 0; bottom: 0; width: 2px; background: var(--accent-2);
+    transform: scaleY(0); transform-origin: top; transition: transform .35s cubic-bezier(.2,.7,.2,1);
+  }
+  .projects li:has(.name a):hover { background: linear-gradient(90deg, var(--bg-2), transparent 78%); }
+  .projects li:has(.name a):hover::before { transform: scaleY(1); }
+
+  .phead { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; flex-wrap: wrap; }
+  .phead .name {
+    font-family: var(--font-display); font-size: 1.22rem; font-weight: 500;
+    letter-spacing: -0.015em; line-height: 1.18;
+  }
+  .phead .name a {
+    color: inherit; border-bottom: 1px solid var(--line-2); padding-bottom: 1px;
+    transition: color .18s, border-color .18s;
+  }
+  .phead .name a::after { content: ''; position: absolute; inset: 0; }
+  .projects li:hover .name a { color: var(--accent); border-color: var(--accent); }
+  .phead .name .arr { font-size: .72em; color: var(--accent); margin-left: 5px; display: inline-block; transition: transform .18s; }
+  .projects li:hover .name .arr { transform: translate(2px, -2px); }
+  .phead .tag {
+    font-size: 9px; font-weight: 500; letter-spacing: .13em; text-transform: uppercase;
+    color: var(--faint); border: 1px solid var(--line-2); border-radius: 100px;
+    padding: 3px 10px; white-space: nowrap;
+  }
+  .phead .tag.win { color: var(--accent); border-color: #4a5c0a; }
+  .desc { color: var(--muted); font-size: .99rem; font-weight: 300; line-height: var(--lh); max-width: 62ch; }
+  .stack { margin-top: 5px; font-size: .88rem; color: var(--faint); }
+
+  footer { margin-top: 42px; font-size: 10.5px; letter-spacing: .06em; color: var(--faint); }
+
+  /* i18n */
+  html[lang="ru"] .en, html[lang="en"] .ru { display: none !important; }
+
+  /* reveal */
+  .fade { opacity: 0; transform: translateY(9px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+  .d1 { animation-delay: .05s } .d2 { animation-delay: .12s } .d3 { animation-delay: .19s } .d4 { animation-delay: .26s }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .fade { opacity: 1; transform: none; animation: none; }
+  }
+
+  @media (max-width: 860px) {
+    .page { grid-template-columns: 1fr; gap: 0; padding: 56px 26px 68px; max-width: 640px; }
+    .rail { position: static; margin-bottom: 48px; }
+    .content { max-width: none; }
+  }
+  @media (max-width: 460px) {
+    html { font-size: 14px; }
+    .page { padding: 44px 20px 56px; }
+    h1 { font-size: 2.05rem; }
+    .row { flex-direction: column; align-items: flex-start; gap: 3px; }
+    .row .ldr { display: none; }
+    .row .v { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <aside class="rail">
+    <div class="monogram fade">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="ru">Химия × машинное обучение</span><span class="en">Chemistry × machine learning</span>
+    </div>
+
+    <h1 class="fade d1">
+      <span class="ru">Станислав<span class="it">Малашкеевич</span></span>
+      <span class="en">Stanislav<span class="it">Malashkeevich</span></span>
+    </h1>
+
+    <p class="tagline fade d2">
+      <span class="ru">Химик. Работаю с нейросетями для предсказания молекулярных свойств и УФ-спектров, агентными системами для лаборатории и бенчмаркингом LLM в химических задачах.</span>
+      <span class="en">Chemist working on neural networks for molecular property and UV spectra prediction, agentic systems for laboratory applications, and benchmarking LLMs on chemistry tasks.</span>
+    </p>
+
+    <nav class="lang fade d2" aria-label="Язык / Language">
+      <button id="btn-ru" class="active" onclick="setLang('ru')" lang="ru">RU</button>
+      <span class="sep" aria-hidden="true">/</span>
+      <button id="btn-en" onclick="setLang('en')" lang="en">EN</button>
+    </nav>
+
+    <div class="spec fade d3">
+      <div class="row">
+        <span class="k"><span class="ru">Сейчас</span><span class="en">Now</span></span>
+        <span class="ldr" aria-hidden="true"></span>
+        <span class="v">
+          <span class="ru">Стажёр-исследователь, ИОХ РАН<span class="sub">группа теоретической химии №24, с 2024</span></span>
+          <span class="en">Research intern, Zelinsky Institute<span class="sub">Theoretical Chemistry Group №24, since 2024</span></span>
+        </span>
+      </div>
+      <div class="row">
+        <span class="k"><span class="ru">Ранее</span><span class="en">Before</span></span>
+        <span class="ldr" aria-hidden="true"></span>
+        <span class="v">
+          <span class="ru">Стажёр, МГУ<span class="sub">лаборатория доставки лекарств, кафедра химической энзимологии, 2022–2025</span></span>
+          <span class="en">Intern, MSU<span class="sub">drug delivery lab, Chemical Enzymology, 2022–2025</span></span>
+        </span>
+      </div>
+      <div class="row">
+        <span class="k"><span class="ru">Учёба</span><span class="en">Education</span></span>
+        <span class="ldr" aria-hidden="true"></span>
+        <span class="v">
+          <span class="ru">МГУ, 2022–2028<span class="sub">спецгруппа «Химия живых систем и нанобиотехнология»</span></span>
+          <span class="en">Moscow State University, 2022–2028<span class="sub">“Chemistry of living systems and nanobiotechnology”</span></span>
+        </span>
+      </div>
+      <div class="row">
+        <span class="k"><span class="ru">Публикации</span><span class="en">Papers</span></span>
+        <span class="ldr" aria-hidden="true"></span>
+        <span class="v">
+          <span class="ru">Соавторство<span class="sub">MDPI Pharmaceutics, 2023</span></span>
+          <span class="en">Co-authorship<span class="sub">MDPI Pharmaceutics, 2023</span></span>
+        </span>
+      </div>
+      <div class="row">
+        <span class="k"><span class="ru">Олимпиады</span><span class="en">Olympiads</span></span>
+        <span class="ldr" aria-hidden="true"></span>
+        <span class="v">
+          <span class="ru">Призёр регионального этапа ВсОШ по химии<span class="sub">СУНЦ НГУ · СУНЦ УрФУ</span></span>
+          <span class="en">Regional prize winner, All-Russian Chemistry Olympiad<span class="sub">SESC NSU · SESC UrFU</span></span>
+        </span>
+      </div>
+    </div>
+
+    <p class="quip fade d3">
+      <span class="ru">Синтез руками, модели — головой.</span>
+      <span class="en">Synthesis by hand, models by head.</span>
+    </p>
+
+    <div class="contact fade d4">
+      <span class="label"><span class="ru">Связаться</span><span class="en">Contact</span></span>
+      <div class="contact-list">
+        <a href="mailto:stasm298@gmail.com">stasm298@gmail.com <span class="ar" aria-hidden="true">↗</span></a>
+        <a href="https://github.com/SuperStas22" target="_blank" rel="noopener">GitHub <span class="ar" aria-hidden="true">↗</span></a>
+        <a class="ru" href="resume.pdf" hreflang="ru" target="_blank" rel="noopener">Резюме, PDF <span class="ar" aria-hidden="true">↗</span></a>
+        <a class="en" href="cv-en.pdf" hreflang="en" target="_blank" rel="noopener">CV, PDF <span class="ar" aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="content">
+    <span class="label fade d2"><span class="ru">Проекты</span><span class="en">Projects</span></span>
+
+    <ul class="projects">
+
+      <li class="fade d2">
+        <div class="phead">
+          <span class="name"><span class="ru">Генерация УФ-спектров</span><span class="en">Generating UV spectra</span></span>
+          <span class="tag"><span class="ru">ИОХ РАН</span><span class="en">Zelinsky Institute</span></span>
+        </div>
+        <p class="desc">
+          <span class="ru">Модель предсказывает УФ-спектры органических соединений по структуре молекулы, без квантово-химического расчёта: ошибка на 30% ниже базовых архитектур, полосы поглощения физичной формы.</span>
+          <span class="en">A model that predicts UV spectra of organic compounds from molecular structure, without a quantum-chemical calculation: error 30% below the baseline architectures, with physically plausible absorption bands.</span>
+        </p>
+        <p class="stack">PyTorch · MPNN / Chemprop · <span class="ru">трансформеры</span><span class="en">transformers</span> · LLM · Slurm</p>
+      </li>
+
+      <li class="fade d2">
+        <div class="phead">
+          <span class="name"><span class="ru">Бенчмарк по химии для LLM</span><span class="en">Chemistry benchmark for LLMs</span></span>
+          <span class="tag"><span class="ru">ИОХ РАН</span><span class="en">Zelinsky Institute</span></span>
+        </div>
+        <p class="desc">
+          <span class="ru">Бенчмарк для оценки того, насколько LLM понимают молекулярную структуру по 2D-представлениям: CIP-конфигурации, таутомерия и другие структурные свойства.</span>
+          <span class="en">A benchmark evaluating how well LLMs infer molecular structure from 2D representations: CIP configurations, tautomerism, and other structural properties.</span>
+        </p>
+        <p class="stack">Python · OpenAI API · Pandas</p>
+      </li>
+
+      <li class="fade d3">
+        <div class="phead">
+          <span class="name">
+            <a href="metalcrow/">MetalCrow<span class="arr" aria-hidden="true">↗</span></a></span>
+          <span class="tag win"><span class="ru">хакатон · 1 место</span><span class="en">hackathon · 1st place</span></span>
+        </div>
+        <p class="desc">
+          <span class="ru">Graph RAG для научного поиска: система ищет по научно-технической литературе на графе знаний, и каждое утверждение в ответе снабжено ссылкой на документ-источник. Трек «Научный клубок», Nornickel AI Science Hack.</span>
+          <span class="en">Graph RAG for scientific search: the system searches scientific and technical literature over a knowledge graph, and every claim in an answer carries a link to its source document. “Scientific Tangle” track, Nornickel AI Science Hack.</span>
+        </p>
+        <p class="stack">Python · Graph RAG · Neo4j · LLM API · <span class="ru">эмбеддинги</span><span class="en">embeddings</span></p>
+      </li>
+
+      <li class="fade d3">
+        <div class="phead">
+          <span class="name"><a href="https://prostospb.team/hackathon-26" target="_blank" rel="noopener"><span class="ru">Ассистент химика-органика</span><span class="en">Assistant for organic chemists</span><span class="arr" aria-hidden="true">↗</span></a></span>
+          <span class="tag win"><span class="ru">хакатон · победитель</span><span class="en">hackathon · winner</span></span>
+        </div>
+        <p class="desc">
+          <span class="ru">Мультиагентный ассистент для планирования органического синтеза в лаборатории, сделанный в команде. Мои модули: визуализация ЯМР-спектров, Safety Check (предупреждение об опасных реагентах и токсичных соединениях), инструменты доступа модели к химическим базам данных. PROSTO, Сбер × ИТМО.</span>
+          <span class="en">A multi-agent assistant for planning organic synthesis in the lab, built with a team. My modules: NMR spectra visualisation, Safety Check (warnings about hazardous reagents and toxic compounds), and the model's access tools for chemical databases. PROSTO, Sber × ITMO.</span>
+        </p>
+        <p class="stack">Python · LLM-<span class="ru">агенты, tool calling</span><span class="en">agents, tool calling</span> · RDKit</p>
+      </li>
+
+      <li class="fade d3">
+        <div class="phead">
+          <span class="name"><span class="ru">Предсказание липофильности (LogP)</span><span class="en">Lipophilicity (LogP) prediction</span></span>
+          <span class="tag"><span class="ru">МГУ</span><span class="en">MSU</span></span>
+        </div>
+        <p class="desc">
+          <span class="ru">Модели предсказания липофильности лекарственно-подобных молекул: точность (R²) на 20% выше базовых моделей из литературы. LogP определяет, всосётся ли препарат и как он распределится в организме.</span>
+          <span class="en">Models predicting the lipophilicity of drug-like molecules: accuracy (R²) 20% above the baseline models from literature. LogP determines whether a drug is absorbed and how it distributes in the body.</span>
+        </p>
+        <p class="stack">Python · RDKit · scikit-learn · scikit-optimize</p>
+      </li>
+
+      <li class="fade d4">
+        <div class="phead">
+          <span class="name"><span class="ru">Индикатор активности L-аспарагиназы</span><span class="en">L-asparaginase activity probe</span></span>
+          <span class="tag"><span class="ru">синтез · МГУ</span><span class="en">synthesis · MSU</span></span>
+        </div>
+        <p class="desc">
+          <span class="ru">Получил органическим синтезом субстрат Asp-AMC и кумариновый индикатор для количественного определения активности L-аспарагиназы — фермента, применяемого в терапии лейкозов: активность измеряется по флуоресценции раствора.</span>
+          <span class="en">Obtained, by organic synthesis, the Asp-AMC substrate and a coumarin probe for quantifying the activity of L-asparaginase — an enzyme used to treat leukaemia: activity is measured by the fluorescence of the solution.</span>
+        </p>
+        <p class="stack"><span class="ru">многостадийный синтез · колоночная хроматография и ТСХ · ЯМР- и УФ-контроль · флуориметрия</span><span class="en">multi-step synthesis · column chromatography and TLC · NMR and UV control · fluorimetry</span></p>
+      </li>
+
+      <li class="fade d4">
+        <div class="phead">
+          <span class="name"><span class="ru">Термогели хитозана для доставки лекарств</span><span class="en">Chitosan thermogels for drug delivery</span></span>
+          <span class="tag"><span class="ru">публикация</span><span class="en">publication</span></span>
+        </div>
+        <p class="desc">
+          <span class="ru">Модифицированные кополимеры хитозана, которые образуют гель при температуре тела и обеспечивают пролонгированное высвобождение препарата — один укол вместо нескольких. Соавторство, MDPI Pharmaceutics, 2023.</span>
+          <span class="en">Modified chitosan copolymers that form a gel at body temperature and provide prolonged drug release — one injection instead of several. Co-authorship, MDPI Pharmaceutics, 2023.</span>
+        </p>
+        <p class="stack"><span class="ru">синтез и модификация полимеров · мицеллярные системы · реология гелей · УФ-спектрофотометрия</span><span class="en">polymer synthesis and modification · micellar systems · gel rheology · UV spectrophotometry</span></p>
+      </li>
+
+    </ul>
+
+    <footer>
+      © 2026 <span class="ru">Станислав Малашкеевич · Москва</span><span class="en">Stanislav Malashkeevich · Moscow</span>
+    </footer>
+  </main>
+
+</div>
+
+<script>
+  function setLang(l) {
+    document.documentElement.lang = l;
+    document.getElementById('btn-ru').classList.toggle('active', l === 'ru');
+    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  }
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('lang'); } catch (e) {}
+    var l = saved || ((navigator.language || 'ru').toLowerCase().indexOf('ru') === 0 ? 'ru' : 'en');
+    setLang(l);
+  })();
+</script>
+
+</body>
+</html>
