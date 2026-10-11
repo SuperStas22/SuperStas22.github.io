@@ -7,6 +7,8 @@ index.html        визитка (RU/EN)
 metalcrow/        лендинг проекта MetalCrow (распакован из standalone-бандла)
   index.html
   assets/         картинки, видео, шрифты, рантайм
+metalcrow-nogh/   тот же лендинг без ссылок на GitHub-репозиторий
+  index.html      (ассеты берёт из ../metalcrow/assets/)
 resume.pdf        резюме
 favicon.svg
 .nojekyll         отключает обработку Jekyll на GitHub Pages
